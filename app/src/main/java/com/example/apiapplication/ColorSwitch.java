@@ -21,18 +21,20 @@ import java.util.Set;
 
 public class ColorSwitch extends AppCompatActivity {
     TextView textView;
-    ImageView imageView[];
+    TextView imageView[];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color_switch);
         textView = (TextView) findViewById(R.id.textView);
-        ImageView imageView[] = {
-                (ImageView) findViewById(R.id.imageView),
-                (ImageView) findViewById(R.id.imageView2),
-                (ImageView) findViewById(R.id.imageView3),
-                (ImageView) findViewById(R.id.imageView4),
-                (ImageView) findViewById(R.id.imageView5)
+        TextView imageView[] = {
+                (TextView) findViewById(R.id.imageView),
+                (TextView) findViewById(R.id.imageView2),
+                (TextView) findViewById(R.id.imageView3),
+                (TextView) findViewById(R.id.imageView4),
+                (TextView) findViewById(R.id.imageView5)
+
+
         };
         FloatingActionButton butt = findViewById(R.id.floatingActionButton);
         Activity activity = this;
@@ -49,8 +51,7 @@ public class ColorSwitch extends AppCompatActivity {
                     for(int j = 0; j < temp.length; j++)
                     {
                         textView.append(temp[j] + " ");
-                        textView.setTextColor(Color.parseColor(temp[j]));
-                        imageView[j].setColorFilter(Color.parseColor(temp[j]));
+                        imageView[j].setBackgroundColor(Color.parseColor(temp[j]));
                     }
 
                 }
